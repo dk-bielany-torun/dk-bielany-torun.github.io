@@ -1,0 +1,46 @@
+title: "Rejon Bielany/Wrzosy"
+description: "Domowy Kościół: Rejon Bielany/Wrzosy, Toruń"
+url: "https://dk-bielany-torun.github.io"
+baseurl: ""
+lang: pl
+
+permalink: /:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      pinned: false
+
+nav:
+  - title: Strona główna
+    url: /
+  - title: Kalendarium
+    url: /kalendarium/
+  - title: Tagi
+    url: /tagi/
+
+links:
+  - title: DK Toruń
+    url: https://dktorun.pl/
+  - title: Domowy Kościół
+    url: https://www.dk.oaza.pl/
+  - title: Parafia św. Józefa (Bielany)
+    url: https://www.jozeftorun.pl/
+  - title: Parafia św. Antoniego (Wrzosy)
+    url: https://antoni-torun.pl/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+future: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CLAUDE.md
+  - README.md
+  - vendor

@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <h1>Domowy Kościół</h1>
+  <p class="hero-subtitle">Rejon Bielany/Wrzosy, Toruń</p>
+  <div class="hero-parishes">
+    <a href="https://www.jozeftorun.pl/" target="_blank" rel="noopener" class="parish-link">Parafia św. Józefa (Bielany)</a>
+    <span class="hero-sep">&bull;</span>
+    <a href="https://antoni-torun.pl/" target="_blank" rel="noopener" class="parish-link">Parafia św. Antoniego (Wrzosy)</a>
+  </div>
+</section>
+
+{{ content }}
+
+<div id="search-container" class="search-container">
+  <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+  <input type="text" id="search-input" placeholder="Szukaj wpisów…" class="search-input">
+  <ul id="results-container" class="search-results"></ul>
+</div>
+
+{% assign pinned_posts = site.posts | where_exp: "post", "post.pinned == true" | sort: "date" | reverse %}
+{% assign regular_posts = site.posts | where_exp: "post", "post.pinned != true" | sort: "date" | reverse %}
+
+{% if pinned_posts.size > 0 %}
+<section class="posts-section">
+  <h2 class="section-title"><span>Przypięte</span></h2>
+  <div class="post-list">
+    {% for post in pinned_posts %}
+    <article class="post-card pinned">
+      <div class="post-card-accent"></div>
+      <div class="post-card-body">
+        <div class="post-card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+          {% if post.tags.size > 0 %}
+          <span class="tags">
+            {% for tag in post.tags %}
+            <a href="{{ '/tagi/' | relative_url }}#{{ tag }}" class="tag tag-{{ tag }}">{{ tag }}</a>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div>
+        <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.excerpt %}
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+        <a href="{{ post.url | relative_url }}" class="post-card-read">Czytaj dalej &rarr;</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if regular_posts.size > 0 %}
+<section class="posts-section">
+  <h2 class="section-title"><span>Ostatnie wpisy</span></h2>
+  <div class="post-list">
+    {% for post in regular_posts %}
+    <article class="post-card">
+      <div class="post-card-accent"></div>
+      <div class="post-card-body">
+        <div class="post-card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+          {% if post.tags.size > 0 %}
+          <span class="tags">
+            {% for tag in post.tags %}
+            <a href="{{ '/tagi/' | relative_url }}#{{ tag }}" class="tag tag-{{ tag }}">{{ tag }}</a>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div>
+        <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.excerpt %}
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+        <a href="{{ post.url | relative_url }}" class="post-card-read">Czytaj dalej &rarr;</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

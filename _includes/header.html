@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="wrapper">
+    <div class="header-top">
+      <a class="site-logo-link" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/logo-dk.png' | relative_url }}" alt="Domowy Kościół — Gałąź Rodzinna Ruchu Światło-Życie" class="site-logo">
+      </a>
+      <span class="site-title">{{ site.title }}</span>
+    </div>
+    <nav class="site-nav">
+      {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

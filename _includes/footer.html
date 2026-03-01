@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-links">
+      <h3>Linki</h3>
+      <ul>
+        {% for link in site.links %}
+        <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer-parishes">
+      <h3>Nasze parafie</h3>
+      <ul>
+        <li><a href="https://www.jozeftorun.pl/" target="_blank" rel="noopener">Parafia św. Józefa (Bielany)</a></li>
+        <li><a href="https://antoni-torun.pl/" target="_blank" rel="noopener">Parafia św. Antoniego (Wrzosy, ul. św. Antoniego 4)</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">Domowy Kościół — Rejon Bielany/Wrzosy, Toruń</p>
+  </div>
+</footer>
