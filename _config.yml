@@ -27,10 +27,6 @@ links:
     url: https://dktorun.pl/
   - title: Domowy Kościół
     url: https://www.dk.oaza.pl/
-  - title: Parafia św. Józefa (Bielany)
-    url: https://www.jozeftorun.pl/
-  - title: Parafia św. Antoniego (Wrzosy)
-    url: https://antoni-torun.pl/
 
 plugins:
   - jekyll-feed
