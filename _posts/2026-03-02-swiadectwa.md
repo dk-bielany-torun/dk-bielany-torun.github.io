@@ -5,7 +5,7 @@ date: 2026-03-02
 tags: [bielany]
 pinned: false
 ---
-Tematy świadectw:
+Tematy świadectw, kolejność jest dowolna!
 
 - [X] ~~Comiesięczny dialog małżeński~~
 - [ ] Reguła życia
