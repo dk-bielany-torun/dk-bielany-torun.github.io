@@ -15,7 +15,7 @@ GitHub Pages site for DK Bielany Toruń, hosted at `dk-bielany-torun.github.io`.
 ## Tech Stack
 
 - **Jekyll** static site generator (v4.3)
-- **Minima**-inspired custom theme with DK branding colors
+- Custom theme with dark gray + gold accent color scheme
 - **Simple-Jekyll-Search** for client-side search
 - **GitHub Pages** for hosting and deployment
 
